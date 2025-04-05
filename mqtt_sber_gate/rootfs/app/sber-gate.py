@@ -20,7 +20,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 #import locale
 #locale.getpreferredencoding()
 
-VERSION = '1.0.15'
+VERSION = '1.0.16'
 LOG_LEVEL_LIST={'deeptrace':0,'trace':1,'debug':2,'info':3,'notice':4,'warning':5,'error':6,'fatal':7}
 LOG_FILE = 'SberGate.log'
 LOG_FILE_MAX_SIZE = 1024*1024*7
@@ -640,7 +640,7 @@ def upd_input_boolean(id,s):
    dc=s['attributes'].get('device_class','')
    fn=s['attributes'].get('friendly_name','')
    log('input_boolean: ' + s['entity_id'] + ' '+fn+'('+dc+')',0)
-   DevicesDB.update(id,{'entity_ha': True,'entity_type': 'input_boolean', 'friendly_name': fn,'category': 'scenario_button'})
+   DevicesDB.update(id,{'entity_ha': True,'entity_type': 'input_boolean', 'friendly_name': fn,'category': 'relay'})
 
 def upd_hvac_radiator(id,s):
    dc=s['attributes'].get('device_class','')
